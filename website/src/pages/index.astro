@@ -5,7 +5,7 @@ const year = new Date().getFullYear();
 ---
 
 <Layout title="heya.skill | 黑鸦标题风格引擎">
-	<nav class="fixed top-0 left-0 right-0 h-[72px] bg-black/85 backdrop-blur-xl border-b border-border z-100" aria-label="主导航">
+	<nav class="fixed top-0 left-0 right-0 h-[72px] bg-surface/85 backdrop-blur-xl border-b border-border z-100" aria-label="主导航">
 		<div class="max-w-[1200px] mx-auto h-full px-4 md:px-6 flex items-center justify-between">
 			<a href="#" class="flex items-center gap-3 font-bold text-lg tracking-[-0.5px] transition-opacity duration-300 hover:opacity-80">
 				<svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="nav-g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#5b9cf5"/><stop offset="100%" stop-color="#3367cc"/></linearGradient></defs><circle cx="16" cy="16" r="15" fill="url(#nav-g)"/><circle cx="16" cy="16" r="14.5" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><text x="16" y="16" text-anchor="middle" dominant-baseline="central" font-family="Arial,sans-serif" font-weight="bold" font-size="20" fill="white">H</text></svg>
@@ -20,11 +20,12 @@ const year = new Date().getFullYear();
 				<a href="#install" class="text-sm font-medium text-foreground-muted hover:text-foreground transition-all duration-300">一键集成</a>
 				<a href="#example" class="text-sm font-medium text-foreground-muted hover:text-foreground transition-all duration-300">效果对比</a>
 			</div>
-			<a
+			<div class="flex items-center gap-3">
+				<a
 				href="https://github.com/ChouChiu/heya.skill"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="flex items-center gap-2 text-sm font-semibold bg-surface border border-border text-foreground px-4 py-2 rounded-full transition-all duration-300 hover:bg-surface-hover hover:border-foreground-muted hover:-translate-y-px hover:scale-105 hover:shadow-[0_0_20px_rgba(79,142,240,0.12)]"
+				class="flex items-center gap-2 text-sm font-semibold bg-surface border border-border text-foreground px-4 py-2 rounded-full transition-all duration-300 hover:bg-surface-hover hover:border-foreground-muted hover:-translate-y-px hover:scale-105 hover:shadow-[0_0_20px_var(--glow-accent)]"
 			>
 				<svg
 					width="20"
@@ -39,6 +40,11 @@ const year = new Date().getFullYear();
 				>
 				GitHub
 			</a>
+				<button class="theme-toggle" aria-label="切换深色/浅色模式" title="切换深色/浅色模式">
+					<svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+					<svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+				</button>
+			</div>
 		</div>
 	</nav>
 
@@ -48,7 +54,7 @@ const year = new Date().getFullYear();
 		<section class="relative min-h-screen flex flex-col items-center justify-center text-center pt-[72px] px-4 md:px-6">
 			<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] lg:w-[800px] lg:top-[5%] bg-[radial-gradient(circle,rgba(79,142,240,0.2)_0%,transparent_60%)] opacity-60 -z-1 pointer-events-none"></div>
 			<div class="inline-flex items-center gap-2.5 bg-badge-bg border border-badge-border px-[18px] py-1.5 rounded-full text-[13px] font-medium text-badge-text mb-8">
-				<span class="w-2 h-2 bg-live-dot rounded-full shadow-[0_0_10px_rgba(255,255,255,0.4)]"></span> 兼容 Claude Code / Cursor / Codex 等 50+ Runtime
+				<span class="w-2 h-2 bg-live-dot rounded-full shadow-[0_0_10px_rgba(var(--shadow-glow),0.4)]"></span> 兼容 Claude Code / Cursor / Codex 等 50+ Runtime
 			</div>
 			<h1 class="text-[clamp(40px,7vw,84px)] font-extrabold leading-[1.15] tracking-[-0.03em] mb-7">
 				为 AI 注入<br /><span class="text-gradient">黑鸦式流量引擎</span>
@@ -57,8 +63,8 @@ const year = new Date().getFullYear();
 				长标题 · 情绪炸弹 · 多事件合并。<br />基于黑鸦百万播放视频深度分析，让你的 AI 一语引爆流量。
 			</p>
 			<div class="flex flex-col md:flex-row items-center justify-center gap-4">
-				<a href="#install" class="w-full md:w-auto text-center bg-foreground text-black font-semibold px-9 py-4 rounded-full text-base transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-[0_12px_40px_rgba(255,255,255,0.2)]">一行命令接入</a>
-				<a href="#features" class="w-full md:w-auto text-center border border-border text-foreground font-semibold px-9 py-4 rounded-full text-base transition-all duration-300 hover:border-foreground-muted hover:bg-surface hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(255,255,255,0.06)]">了解工作原理</a>
+				<a href="#install" class="w-full md:w-auto text-center bg-foreground text-surface font-semibold px-9 py-4 rounded-full text-base transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-[0_12px_40px_var(--glow-accent)]">一行命令接入</a>
+				<a href="#features" class="w-full md:w-auto text-center border border-border text-foreground font-semibold px-9 py-4 rounded-full text-base transition-all duration-300 hover:border-foreground-muted hover:bg-surface hover:-translate-y-0.5 hover:shadow-[0_8px_24px_var(--glow-accent)]">了解工作原理</a>
 			</div>
 		</section>
 
@@ -69,28 +75,28 @@ const year = new Date().getFullYear();
 				<p class="text-[clamp(13px,1.5vw,17px)] text-foreground-muted">基于 B 站百万播放标题深度分析，自动覆盖情感式、悬念式、日报式、对比式</p>
 			</div>
 			<div class="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-[14px] w-full">
-				<div class="feature-card group bg-surface border border-border p-[22px_20px] rounded-2xl transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1.5 hover:border-border-hover hover:shadow-[0_20px_60px_rgba(0,0,0,0.6),0_0_30px_rgba(79,142,240,0.06)]">
+				<div class="feature-card group bg-surface border border-border p-[22px_20px] rounded-2xl transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1.5 hover:border-border-hover hover:shadow-[0_20px_60px_rgba(0,0,0,0.6),0_0_30px_var(--glow-accent)]">
 					<div class="w-10 h-10 bg-icon-bg rounded-[10px] flex items-center justify-center text-[22px] mb-3.5 border border-icon-border transition-transform duration-300 group-hover:scale-110">💥</div>
 					<h3 class="text-[17px] font-semibold mb-2">情感式轰炸</h3>
 					<p class="text-foreground-muted text-[13px] leading-[1.5]">
 						利用"震撼官宣""杀疯了"等极具冲击力的情绪词，合并多事件制造强冲突，适合发布重磅爆料。
 					</p>
 				</div>
-				<div class="feature-card group bg-surface border border-border p-[22px_20px] rounded-2xl transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1.5 hover:border-border-hover hover:shadow-[0_20px_60px_rgba(0,0,0,0.6),0_0_30px_rgba(79,142,240,0.06)]">
+				<div class="feature-card group bg-surface border border-border p-[22px_20px] rounded-2xl transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1.5 hover:border-border-hover hover:shadow-[0_20px_60px_rgba(0,0,0,0.6),0_0_30px_var(--glow-accent)]">
 					<div class="w-10 h-10 bg-icon-bg rounded-[10px] flex items-center justify-center text-[22px] mb-3.5 border border-icon-border transition-transform duration-300 group-hover:scale-110">🔍</div>
 					<h3 class="text-[17px] font-semibold mb-2">悬念式留白</h3>
 					<p class="text-foreground-muted text-[13px] leading-[1.5]">
 						"后背发凉""见证历史..."通过制造强烈的心理落差和未知感吸纳点击，最适合深度解读类内容。
 					</p>
 				</div>
-				<div class="feature-card group bg-surface border border-border p-[22px_20px] rounded-2xl transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1.5 hover:border-border-hover hover:shadow-[0_20px_60px_rgba(0,0,0,0.6),0_0_30px_rgba(79,142,240,0.06)]">
+				<div class="feature-card group bg-surface border border-border p-[22px_20px] rounded-2xl transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1.5 hover:border-border-hover hover:shadow-[0_20px_60px_rgba(0,0,0,0.6),0_0_30px_var(--glow-accent)]">
 					<div class="w-10 h-10 bg-icon-bg rounded-[10px] flex items-center justify-center text-[22px] mb-3.5 border border-icon-border transition-transform duration-300 group-hover:scale-110">📰</div>
 					<h3 class="text-[17px] font-semibold mb-2">日报式聚合</h3>
 					<p class="text-foreground-muted text-[13px] leading-[1.5]">
 						高信息密度并列展现，尾部标准化"| AI日报0523"印记，用极简的排版容纳海量前沿动态。
 					</p>
 				</div>
-				<div class="feature-card group bg-surface border border-border p-[22px_20px] rounded-2xl transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1.5 hover:border-border-hover hover:shadow-[0_20px_60px_rgba(0,0,0,0.6),0_0_30px_rgba(79,142,240,0.06)]">
+				<div class="feature-card group bg-surface border border-border p-[22px_20px] rounded-2xl transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1.5 hover:border-border-hover hover:shadow-[0_20px_60px_rgba(0,0,0,0.6),0_0_30px_var(--glow-accent)]">
 					<div class="w-10 h-10 bg-icon-bg rounded-[10px] flex items-center justify-center text-[22px] mb-3.5 border border-icon-border transition-transform duration-300 group-hover:scale-110">⚡</div>
 					<h3 class="text-[17px] font-semibold mb-2">对比式决裂</h3>
 					<p class="text-foreground-muted text-[13px] leading-[1.5]">
@@ -113,26 +119,26 @@ const year = new Date().getFullYear();
 
 					<div class="flex flex-col gap-2.5">
 						<div class="flex items-center gap-2.5 text-[13px] text-foreground-muted">
-							<strong class="text-foreground bg-white/5 px-2.5 py-1 rounded-md border border-border font-mono text-xs min-w-[100px] text-center">每日 CI</strong> 自动采集 B 站原始标题数据
+							<strong class="text-foreground bg-tag-bg px-2.5 py-1 rounded-md border border-border font-mono text-xs min-w-[100px] text-center">每日 CI</strong> 自动采集 B 站原始标题数据
 						</div>
 						<div class="flex items-center gap-2.5 text-[13px] text-foreground-muted">
-							<strong class="text-foreground bg-white/5 px-2.5 py-1 rounded-md border border-border font-mono text-xs min-w-[100px] text-center">4 种结构</strong> 覆盖情感式 / 悬念式 / 日报式 / 对比式
+							<strong class="text-foreground bg-tag-bg px-2.5 py-1 rounded-md border border-border font-mono text-xs min-w-[100px] text-center">4 种结构</strong> 覆盖情感式 / 悬念式 / 日报式 / 对比式
 						</div>
 						<div class="flex items-center gap-2.5 text-[13px] text-foreground-muted">
-							<strong class="text-foreground bg-white/5 px-2.5 py-1 rounded-md border border-border font-mono text-xs min-w-[100px] text-center">Agent Skills</strong> 标准协议 · 50+ runtime 一键挂载
+							<strong class="text-foreground bg-tag-bg px-2.5 py-1 rounded-md border border-border font-mono text-xs min-w-[100px] text-center">Agent Skills</strong> 标准协议 · 50+ runtime 一键挂载
 						</div>
 					</div>
 				</div>
 
 				<div id="example" class="max-w-[560px] mx-auto lg:max-w-none">
-					<div class="bg-surface border border-border rounded-2xl overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.8)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_40px_100px_rgba(0,0,0,0.9),0_0_40px_rgba(79,142,240,0.08)]">
+					<div class="bg-surface border border-border rounded-2xl overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.8)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_40px_100px_rgba(0,0,0,0.9),0_0_40px_var(--glow-accent)]">
 						<div class="bg-window-bg px-5 py-3.5 border-b border-border flex items-center">
 							<div class="flex gap-2">
 								<i class="w-3 h-3 rounded-full bg-dot-red transition-transform duration-300 hover:scale-125"></i>
 								<i class="w-3 h-3 rounded-full bg-dot-yellow transition-transform duration-300 hover:scale-125"></i>
 								<i class="w-3 h-3 rounded-full bg-dot-green transition-transform duration-300 hover:scale-125"></i>
 							</div>
-							<div class="flex-1 text-center text-xs text-[#666] font-mono mr-[60px]">heya.skill - 视觉演示</div>
+							<div class="flex-1 text-center text-xs text-foreground-muted font-mono mr-[60px]">heya.skill - 视觉演示</div>
 						</div>
 						<div class="p-[18px_16px] flex flex-col gap-3.5 bg-window-bg">
 							<div class="bg-surface p-6 rounded-xl border border-border relative transition-all duration-300 hover:border-border-hover">
@@ -142,9 +148,9 @@ const year = new Date().getFullYear();
 								</p>
 							</div>
 							<div class="flex gap-1.5 px-5">
-								<span class="circle w-2 h-2 bg-[#444] rounded-full animate-typing"></span>
-								<span class="circle w-2 h-2 bg-[#444] rounded-full animate-typing"></span>
-								<span class="circle w-2 h-2 bg-[#444] rounded-full animate-typing"></span>
+								<span class="circle w-2 h-2 bg-foreground-muted rounded-full animate-typing"></span>
+								<span class="circle w-2 h-2 bg-foreground-muted rounded-full animate-typing"></span>
+								<span class="circle w-2 h-2 bg-foreground-muted rounded-full animate-typing"></span>
 							</div>
 							<div class="flex flex-col gap-4 mt-2 bg-surface p-6 rounded-xl border border-border relative transition-all duration-300 hover:border-border-hover">
 								<span class="text-xs font-semibold px-2.5 py-1 rounded-md absolute -top-3 left-5 bg-accent/10 backdrop-blur-[10px] text-accent border border-accent/30">黑鸦风生成组</span>
@@ -176,13 +182,13 @@ const year = new Date().getFullYear();
 
 			<div class="bg-window-bg border border-border rounded-[20px] max-w-[860px] mx-auto overflow-hidden w-full">
 				<div class="flex flex-col md:flex-row bg-surface border-b border-border">
-					<button class="tab-btn active flex-1 bg-transparent border-none p-5 text-[15px] font-medium cursor-pointer border-l-2 md:border-l-0 md:border-b-2 border-transparent transition-all duration-200 hover:text-foreground hover:bg-white/[0.02] text-left md:text-center" data-tab="tab-cli">
+					<button class="tab-btn active flex-1 bg-transparent border-none p-5 text-[15px] font-medium cursor-pointer border-l-2 md:border-l-0 md:border-b-2 border-transparent transition-all duration-300 hover:bg-surface-hover text-left md:text-center" data-tab="tab-cli">
 						一行命令 (推荐)
 					</button>
-					<button class="tab-btn flex-1 bg-transparent border-none p-5 text-foreground-muted text-[15px] font-medium cursor-pointer border-l-2 md:border-l-0 md:border-b-2 border-transparent transition-all duration-200 hover:text-foreground hover:bg-white/[0.02] text-left md:text-center" data-tab="tab-prompt">
+					<button class="tab-btn flex-1 bg-transparent border-none p-5 text-foreground-muted text-[15px] font-medium cursor-pointer border-l-2 md:border-l-0 md:border-b-2 border-transparent transition-all duration-300 hover:text-foreground hover:bg-surface-hover text-left md:text-center" data-tab="tab-prompt">
 						自然语言提示
 					</button>
-					<button class="tab-btn flex-1 bg-transparent border-none p-5 text-foreground-muted text-[15px] font-medium cursor-pointer border-l-2 md:border-l-0 md:border-b-2 border-transparent transition-all duration-200 hover:text-foreground hover:bg-white/[0.02] text-left md:text-center" data-tab="tab-manual">
+					<button class="tab-btn flex-1 bg-transparent border-none p-5 text-foreground-muted text-[15px] font-medium cursor-pointer border-l-2 md:border-l-0 md:border-b-2 border-transparent transition-all duration-300 hover:text-foreground hover:bg-surface-hover text-left md:text-center" data-tab="tab-manual">
 						手动配置
 					</button>
 				</div>
@@ -192,10 +198,10 @@ const year = new Date().getFullYear();
 						<p class="text-foreground-muted mb-5 text-[15px]">
 							通用 CLI 安装器（支持 55+ runtime），自动识别当前环境：
 						</p>
-						<div class="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-4 bg-black border border-border rounded-xl p-[16px_20px]">
+						<div class="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-4 bg-surface border border-border rounded-xl p-[16px_20px]">
 							<code class="font-mono text-sm text-code-fg overflow-x-auto whitespace-nowrap pr-4"><span class="text-foreground-muted mr-2">$</span> npx skills add ChouChiu/heya.skill</code>
 							<button
-								class="copy-btn self-start md:self-auto bg-surface border border-border text-foreground-muted px-3.5 py-2 rounded-lg text-[13px] cursor-pointer transition-all duration-300 whitespace-nowrap hover:bg-surface-hover hover:text-foreground hover:border-foreground-muted hover:scale-105 hover:shadow-[0_0_15px_rgba(79,142,240,0.12)]"
+								class="copy-btn self-start md:self-auto bg-surface border border-border text-foreground-muted px-3.5 py-2 rounded-lg text-[13px] cursor-pointer transition-all duration-300 whitespace-nowrap hover:bg-surface-hover hover:text-foreground hover:border-foreground-muted hover:scale-105 hover:shadow-[0_0_15px_var(--glow-accent)]"
 								aria-label="复制安装命令"
 								data-copy="npx skills add ChouChiu/heya.skill"
 								>复制</button>
@@ -206,10 +212,10 @@ const year = new Date().getFullYear();
 						<p class="text-foreground-muted mb-5 text-[15px]">
 							直接在任意 AI Agent 对话中输入：
 						</p>
-						<div class="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-4 bg-black border border-border rounded-xl p-[16px_20px]">
+						<div class="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-4 bg-surface border border-border rounded-xl p-[16px_20px]">
 							<code class="font-mono text-sm text-code-fg overflow-x-auto whitespace-nowrap pr-4">帮我安装这个 skill：https://github.com/ChouChiu/heya.skill</code>
 							<button
-								class="copy-btn self-start md:self-auto bg-surface border border-border text-foreground-muted px-3.5 py-2 rounded-lg text-[13px] cursor-pointer transition-all duration-300 whitespace-nowrap hover:bg-surface-hover hover:text-foreground hover:border-foreground-muted hover:scale-105 hover:shadow-[0_0_15px_rgba(79,142,240,0.12)]"
+								class="copy-btn self-start md:self-auto bg-surface border border-border text-foreground-muted px-3.5 py-2 rounded-lg text-[13px] cursor-pointer transition-all duration-300 whitespace-nowrap hover:bg-surface-hover hover:text-foreground hover:border-foreground-muted hover:scale-105 hover:shadow-[0_0_15px_var(--glow-accent)]"
 								aria-label="复制提示文本"
 								data-copy="帮我安装这个 skill：https://github.com/ChouChiu/heya.skill"
 								>复制</button>
@@ -220,10 +226,10 @@ const year = new Date().getFullYear();
 						<p class="text-foreground-muted mb-5 text-[15px]">
 							手动 clone 到对应 runtime 的 <code class="bg-code-bg text-accent px-1.5 py-0.5 rounded font-mono">skills</code> 目录：
 						</p>
-						<div class="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-4 bg-black border border-border rounded-xl p-[16px_20px]">
+						<div class="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-4 bg-surface border border-border rounded-xl p-[16px_20px]">
 							<code class="font-mono text-sm text-code-fg overflow-x-auto whitespace-nowrap pr-4"><span class="text-foreground-muted mr-2">$</span> git clone https://github.com/ChouChiu/heya.skill ~/.claude/skills/heya.skill/</code>
 							<button
-								class="copy-btn self-start md:self-auto bg-surface border border-border text-foreground-muted px-3.5 py-2 rounded-lg text-[13px] cursor-pointer transition-all duration-300 whitespace-nowrap hover:bg-surface-hover hover:text-foreground hover:border-foreground-muted hover:scale-105 hover:shadow-[0_0_15px_rgba(79,142,240,0.12)]"
+								class="copy-btn self-start md:self-auto bg-surface border border-border text-foreground-muted px-3.5 py-2 rounded-lg text-[13px] cursor-pointer transition-all duration-300 whitespace-nowrap hover:bg-surface-hover hover:text-foreground hover:border-foreground-muted hover:scale-105 hover:shadow-[0_0_15px_var(--glow-accent)]"
 								aria-label="复制克隆命令"
 								data-copy="git clone https://github.com/ChouChiu/heya.skill ~/.claude/skills/heya.skill/"
 								>复制</button>
@@ -308,4 +314,23 @@ const year = new Date().getFullYear();
 			}
 		});
 	});
+
+	// Theme toggle (View Transitions API, Chrome-only)
+	const themeToggle = document.querySelector(".theme-toggle");
+	if (themeToggle) {
+		themeToggle.addEventListener("click", () => {
+			const html = document.documentElement;
+			const current = html.getAttribute("data-theme");
+			const next = current === "dark" ? "light" : "dark";
+			const apply = () => {
+				html.setAttribute("data-theme", next);
+				localStorage.setItem("theme", next);
+			};
+			if (document.startViewTransition) {
+				document.startViewTransition(() => apply());
+			} else {
+				apply();
+			}
+		});
+	}
 </script>

@@ -1,30 +1,38 @@
 @import "tailwindcss";
 
+/* ── View Transition API animation ── */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.3s;
+}
+
 @theme {
-  --color-surface: #050505;
-  --color-surface-hover: #141414;
-  --color-border: #1f1f1f;
-  --color-border-hover: #333333;
-  --color-foreground: #f0f0f0;
-  --color-foreground-muted: #888888;
-  --color-accent: #4f8ef0;
-  --color-accent-glow: rgba(79, 142, 240, 0.3);
-  --color-badge-border: rgba(255, 255, 255, 0.08);
-  --color-badge-bg: rgba(255, 255, 255, 0.04);
-  --color-badge-text: #a1a1aa;
-  --color-live-dot: #ffffff;
-  --color-code-bg: rgba(255, 255, 255, 0.1);
-  --color-tag-dim-bg: #222;
-  --color-tab-active-bg: #000000;
-  --color-window-bg: #000000;
+  --color-surface: light-dark(#050505, #ffffff);
+  --color-surface-hover: light-dark(#141414, #f5f5f5);
+  --color-border: light-dark(#1f1f1f, #e5e5e5);
+  --color-border-hover: light-dark(#333333, #d4d4d4);
+  --color-foreground: light-dark(#f0f0f0, #171717);
+  --color-foreground-muted: light-dark(#888888, #525252);
+  --color-accent: light-dark(#4f8ef0, #3b7de0);
+  --color-accent-glow: light-dark(rgba(79, 142, 240, 0.3), rgba(59, 125, 224, 0.2));
+  --color-badge-border: light-dark(rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.08));
+  --color-badge-bg: light-dark(rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.04));
+  --color-badge-text: light-dark(#a1a1aa, #525252);
+  --color-live-dot: light-dark(#ffffff, #3b7de0);
+  --color-code-bg: light-dark(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.06));
+  --color-tag-bg: light-dark(rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.05));
+  --color-tag-dim-bg: light-dark(#222, #e5e5e5);
+  --color-tab-active-bg: light-dark(#000000, #f2f2f2);
+  --color-window-bg: light-dark(#000000, #ffffff);
+  --color-bg: light-dark(#050505, #ffffff);
   --color-dot-red: #ff5f56;
   --color-dot-yellow: #ffbd2e;
   --color-dot-green: #27c93f;
-  --color-res-text: #ccc;
-  --color-res-text-dim: #999;
-  --color-code-fg: #e5e7eb;
-  --color-icon-bg: rgba(255, 255, 255, 0.03);
-  --color-icon-border: rgba(255, 255, 255, 0.06);
+  --color-res-text: light-dark(#ccc, #525252);
+  --color-res-text-dim: light-dark(#999, #737373);
+  --color-code-fg: light-dark(#e5e7eb, #171717);
+  --color-icon-bg: light-dark(rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.03));
+  --color-icon-border: light-dark(rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.06));
 
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
@@ -35,7 +43,7 @@
 
 /* ── Text gradient utility ── */
 @utility text-gradient {
-  background: linear-gradient(135deg, #4f8ef0 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #4f8ef0 0%, var(--color-foreground) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -64,6 +72,11 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* ── Smooth scrolling ── */
+html {
+  scroll-behavior: smooth;
 }
 
 /* ── Global overrides ── */
@@ -113,7 +126,7 @@
   display: block;
   width: 22px;
   height: 2px;
-  background: #f0f0f0;
+  background: var(--color-foreground);
   border-radius: 2px;
   transition: all 0.3s;
 }
@@ -137,14 +150,14 @@
     top: 72px;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.95);
+    background: var(--color-surface);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
     align-items: center;
     gap: 0;
     padding: 16px 0;
-    border-bottom: 1px solid #1f1f1f;
+    border-bottom: 1px solid var(--color-border);
     z-index: 101;
   }
   .nav-toggle-input:checked ~ .links {
@@ -169,7 +182,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(135deg, #4f8ef0 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #4f8ef0 0%, var(--color-foreground) 100%);
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -187,14 +200,14 @@
 
 /* ── Tab active state ── */
 .tab-btn.active {
-  color: #f0f0f0;
-  border-left-color: #4f8ef0;
+  color: var(--color-foreground);
+  border-left-color: var(--color-accent);
 }
 @media (min-width: 768px) {
   .tab-btn.active {
     border-left-color: transparent;
-    border-bottom-color: #4f8ef0;
-    background: #000000;
+    border-bottom-color: var(--color-accent);
+    background: var(--color-tab-active-bg);
   }
 }
 
@@ -208,7 +221,52 @@
 
 /* ── Copy button "copied" state ── */
 .copy-btn.copied {
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  border-color: #ffffff;
+  background: var(--color-code-bg);
+  color: var(--color-foreground);
+  border-color: var(--color-foreground);
 }
+
+/* ── Color scheme (drives light-dark() resolution) ── */
+:root {
+  color-scheme: dark;
+  --shadow-glow: light-dark(255, 255, 255, 0, 0, 0);
+  --glow-accent: light-dark(rgba(79, 142, 240, 0.2), rgba(59, 125, 224, 0.35));
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+/* ── Theme toggle button ── */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-foreground-muted);
+  cursor: pointer;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+.theme-toggle:hover {
+  border-color: var(--color-border-hover);
+  color: var(--color-foreground);
+  background: var(--color-surface-hover);
+}
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon {
+  transition: all 0.3s;
+}
+/* Show sun in dark mode, moon in light mode */
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: block; }
+[data-theme="light"] .theme-toggle .icon-sun { display: block; }
+[data-theme="light"] .theme-toggle .icon-moon { display: none; }

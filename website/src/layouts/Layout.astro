@@ -40,8 +40,13 @@ const description = "黑鸦 · 标题风格生成器 — 流量密码，一键�
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
             rel="stylesheet"
         />
+
+        <!-- Prevent FOUC: set data-theme before first paint -->
+        <script is:inline>
+          (function(){var t=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");document.documentElement.setAttribute("data-theme",t);})();
+        </script>
     </head>
-    <body class="font-sans bg-black text-foreground leading-relaxed antialiased min-h-screen overflow-x-hidden">
+    <body class="font-sans bg-bg text-foreground leading-relaxed antialiased min-h-screen overflow-x-hidden">
         <a href="#main-content" class="skip-link">跳转到主要内容</a>
         <slot />
     </body>
