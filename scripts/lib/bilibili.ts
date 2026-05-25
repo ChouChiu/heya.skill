@@ -157,15 +157,9 @@ export function buildVideoEntry(video: BilibiliVideoItem): VideoEntry {
   };
 }
 
-/** 分页获取所有视频（支持增量：传 since=最新已知 timestamp，遇到已存在的就停） */
-export async function fetchAllVideos(since?: number): Promise<VideoEntry[]> {
-  if (since) {
-    console.log(
-      `🚀 增量获取：只拉取 ${new Date(since * 1000).toISOString().split("T")[0]} 之后的新视频...\n`,
-    );
-  } else {
-    console.log(`🚀 开始获取博主 ${UID} 的视频列表...\n`);
-  }
+/** 分页获取所有视频 */
+export async function fetchAllVideos(): Promise<VideoEntry[]> {
+  console.log(`🚀 开始获取博主 ${UID} 的视频列表...\n`);
 
   console.log("🔑 获取 WBI 签名密钥...");
   const { img, sub } = await getWbiKeys();
@@ -181,20 +175,9 @@ export async function fetchAllVideos(since?: number): Promise<VideoEntry[]> {
     "第一页请求",
   );
   totalCount = firstPage.page.count;
-  console.log(`📊 博主共 ${totalCount} 个视频`);
+  console.log(`📊 共 ${totalCount} 个视频`);
 
   for (const video of firstPage.list.vlist) {
-    // 增量模式：遇到已存在的视频就停
-    if (since && video.created <= since) {
-      console.log(
-        `  🛑 在第 1 页遇到已有视频 (${video.title.slice(0, 30)}...)，停止翻页`,
-      );
-      const results: VideoEntry[] = allVideos.map(buildVideoEntry);
-      console.log(
-        `\n📹 新增 ${results.length} 个视频标题（已有视频不再拉取）\n`,
-      );
-      return results;
-    }
     allVideos.push(video);
   }
   console.log(`  ✅ 第 ${page} 页: ${firstPage.list.vlist.length} 个视频`);
@@ -206,17 +189,6 @@ export async function fetchAllVideos(since?: number): Promise<VideoEntry[]> {
     try {
       const pageData = await fetchVideoPage(page, img, sub);
       for (const video of pageData.list.vlist) {
-        // 增量模式：遇到已存在的视频就停
-        if (since && video.created <= since) {
-          console.log(
-            `  🛑 在第 ${page} 页遇到已有视频 (${video.title.slice(0, 30)}...)，停止翻页`,
-          );
-          const results: VideoEntry[] = allVideos.map(buildVideoEntry);
-          console.log(
-            `\n📹 新增 ${results.length} 个视频标题（已有视频不再拉取）\n`,
-          );
-          return results;
-        }
         allVideos.push(video);
       }
       console.log(`  ✅ 第 ${page} 页: ${pageData.list.vlist.length} 个视频`);
@@ -229,13 +201,7 @@ export async function fetchAllVideos(since?: number): Promise<VideoEntry[]> {
   }
 
   const results: VideoEntry[] = allVideos.map(buildVideoEntry);
-  if (since) {
-    console.log(
-      `\n📹 新增 ${results.length} 个视频标题（已翻完全部，均为新视频）\n`,
-    );
-  } else {
-    console.log(`\n📹 已收集 ${results.length} 个视频标题\n`);
-  }
+  console.log(`\n📹 已收集 ${results.length} 个视频标题\n`);
 
   return results;
 }
