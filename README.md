@@ -191,7 +191,7 @@ OpenAI 正在 ChatGPT 网页端测试名为 "Intelligence" 的简化版模型选
 
 ```mermaid
 flowchart LR
-    API[B站 API<br/>采集] --> titles[01-titles.json<br/>原始数据]
+    UAPI[UAPI 第三方 API<br/>免费额度] --> titles[01-titles.json<br/>原始数据]
     titles --> analysis[02-style-analysis.json<br/>风格分析]
     analysis --> generate(注入模板<br/>生成)
     generate --> skill[SKILL.md<br/>AI 读取]
@@ -199,7 +199,7 @@ flowchart LR
 
 | 步骤    | 说明                                                                  |
 | ------- | --------------------------------------------------------------------- |
-| 1. 采集 | 从 B 站获取黑鸦视频标题原始数据                                       |
+| 1. 采集 | 通过 [UAPI](https://uapis.cn) 获取黑鸦视频标题                        |
 | 2. 分析 | 统计标题长度分布、情绪词频、结构占比、高频词汇                        |
 | 3. 生成 | 将分析结果注入 [`SKILL.md`](SKILL.md)，形成 AI agent 可读取的风格指南 |
 
@@ -217,11 +217,10 @@ bun pipeline --skip-fetch # 跳过采集，仅分析 + 生成
 git clone https://github.com/ChouChiu/heya.skill
 cd heya.skill
 
-# 配置 B 站 Cookie（仅采集标题时需要）
-cp .env.example .env
-# 编辑 .env，填入 BILI_COOKIE="SESSDATA=xxx"
+# 安装依赖
+bun install
 
-# 运行全流程
+# 直接运行（零配置，使用 UAPI 免费额度）
 bun pipeline
 
 # 更多选项
@@ -236,15 +235,16 @@ bun run format     # Biome 自动修复
 
 ## 项目结构
 
-| 路径                   | 说明                                   |
-| ---------------------- | -------------------------------------- |
-| `SKILL.md`             | 生成产物：Agent Skills 入口（AI 读取） |
-| `SKILL.example.md`     | ✏️ 模板源文件（手动编辑这个）           |
-| `scripts/pipeline.ts`  | 全流程编排：采集 → 分析 → 生成         |
-| `scripts/lib/`         | 共享模块（B站 API、分析引擎、生成器）  |
-| `references/research/` | 分析数据（JSON + MD 双格式）           |
-| `website/`             | Astro 落地页（独立项目）               |
-| `.github/workflows/`   | CI：每日自动更新 + 网站部署            |
+| 路径                   | 说明                                          |
+| ---------------------- | --------------------------------------------- |
+| `SKILL.md`             | 生成产物：Agent Skills 入口（AI 读取）        |
+| `SKILL.example.md`     | ✏️ 模板源文件（手动编辑这个）                  |
+| `scripts/pipeline.ts`  | 全流程编排：采集 → 分析 → 生成                |
+| `scripts/lib/uapi.ts`  | UAPI 客户端：分页采集 B站视频标题（纯 fetch） |
+| `scripts/lib/`         | 共享模块（分析引擎、分词、生成器）            |
+| `references/research/` | 分析数据（JSON + MD 双格式）                  |
+| `website/`             | Astro 落地页（独立项目）                      |
+| `.github/workflows/`   | CI：每日自动更新 + 网站部署                   |
 
 ## 相关链接
 

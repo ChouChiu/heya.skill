@@ -34,8 +34,6 @@ jobs:
         run: bun install
 
       - name: Run pipeline (fetch + analyze + update)
-        env:
-          BILI_COOKIE: ${{ secrets.BILI_COOKIE }}
         run: bun pipeline
 
       - name: Commit and push changes

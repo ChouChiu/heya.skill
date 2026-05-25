@@ -2,52 +2,51 @@
 
 ## Stack
 - **Runtime:** Bun (`#!/usr/bin/env bun` on all scripts; `bun.lock`)
-- **Language:** TypeScript (`noEmit: true`, `strict: true`)
-- **Deps:** `jieba-wasm` (Chinese word segmentation); `@biomejs/biome` (dev, linter/formatter)
-- **Website:** Astro (`website/` is a separate Bun project with its own `package.json`)
-- **Node built-ins:** `node:` protocol (`node:fs`, `node:path`, `node:child_process`)
+- **Language:** TypeScript (`noEmit: true`, `strict: true`, `bundler` moduleResolution)
+- **Deps:** `uapi-sdk-typescript` (B站数据采集); `p-retry` (指数退避重试); `jieba-wasm` (中文分词)
+- **Dev:** `@biomejs/biome` (lint + format, double quotes, auto-organize imports)
+- **Website:** Astro (`website/` is a separate Bun project; deploys to GitHub Pages)
 
 ## Layout
-- `SKILL.md` — generated output (Agent Skills standard, agent reads this)
-- `SKILL.example.md` — template with `<!-- AUTO_START/END -->` markers (hand-edit this)
-- `scripts/` — pipeline entry points (thin wrappers, `--help` supported)
-- `scripts/lib/` — shared: types, utils, bilibili API, analysis engine, SKILL.md generators
-- `references/research/` — raw titles JSON, analysis JSON + MD (dual-format, same basename)
-- `.github/workflows/` — daily 20:30 UTC+8 auto-update CI + website deploy on push to `website/`
-- `website/` — Astro landing page (ignored by biome via `biome.json`)
+- `SKILL.md` — generated output (Agent Skills standard); NEVER edit by hand
+- `SKILL.example.md` — template with `<!-- AUTO_START/END:section -->` markers; edit THIS
+- `scripts/` — pipeline entry points (`fetch-bilibili-titles.ts`, `analyze-titles.ts`, `update-skill.ts`, `pipeline.ts`)
+- `scripts/lib/` — shared: types, utils, `uapi.ts` (UAPI client), `analysis/` (engine), `generate/` (SKILL.md sections)
+- `references/research/` — `01-titles.json`, `02-style-analysis.{json,md}` (dual-format output)
+- `.github/workflows/` — `update-reference.yml` (daily 20:30 UTC+8 CI), `deploy-website.yml` (on push to `website/`)
 - `.reasonix/` — auto-generated semantic index (do not edit)
-- `.env` — Bilibili auth cookie (gitignored by `**/.env`)
+- `website/` — Astro landing page; linguist-vendored in `.gitattributes`
 
 ## Commands
 ```bash
-bun pipeline              # fetch → analyze → generate SKILL.md
+bun pipeline              # fetch → analyze → SKILL.md
 bun pipeline --skip-fetch # analyze + generate only
 bun pipeline --skip-analyze
 bun pipeline --dry-run
 bun run scripts/fetch-bilibili-titles.ts
 bun run scripts/analyze-titles.ts --top 30
-bun run scripts/update-skill.ts          # SKILL.example.md → SKILL.md
-bun run lint                             # Biome check
-bun run format                           # Biome auto-fix
+bun run scripts/update-skill.ts
+bun run lint                             # biome check scripts/
+bun run format                           # biome check --write scripts/ website/src/
 bun website:dev                          # Astro dev server
-bun website:build                        # Astro build
+bun website:build
 ```
 
 ## Conventions
-- Scripts have `#!/usr/bin/env bun` shebang; all `.ts`
-- `import.meta.dir` for script directory resolution (Bun ESM native)
-- Node builtins use `node:` protocol (`node:fs`, `node:path`, etc.) per Biome rule
-- Analysis output dual-format: `.json` + `.md`, same basename in `references/research/`
-- SKILL.md frontmatter (`name`, `description`) follows Agent Skills spec (agentskills.io)
-- Chinese word segmentation uses `jieba-wasm` (`cut(text, true)` with HMM)
-- Biome enforces double quotes + auto-organize imports (`biome.json`)
+- All scripts are `.ts` with `#!/usr/bin/env bun` shebang
+- `import.meta.dir` for directory resolution (Bun ESM native, won't work under plain Node)
+- Node builtins use `node:` protocol (`node:fs`, `node:path`, `node:child_process`)
+- Analysis output: `.json` + `.md` same basename in `references/research/`
+- SKILL.md frontmatter follows Agent Skills spec (agentskills.io)
+- Chinese word segmentation: `jieba-wasm` with `cut(text, true)` (HMM mode)
 
 ## Watch out for
 - `.reasonix/` is auto-generated — never edit manually
-- `fetch-bilibili-titles.ts` needs `BILI_COOKIE="SESSDATA=xxx"` in `.env`; see `.env.example`
-- Edit `SKILL.example.md`, never the generated `SKILL.md`
-- All scripts expect to be run from project root via `bun run`
-- `import.meta.dir` is Bun-only; scripts won't run under plain Node
-- `jieba-wasm` is a WASM module — works in Bun but requires `wasm` support
-- `website/` is a separate Bun project; biome ignores it; GitHub linguist marks it vendored
-- Website deploys to `chouchiu.github.io/heya.skill/` — Astro `base` must stay `/heya.skill`
+- Edit `SKILL.example.md`, never `SKILL.md`; auto sections between `AUTO_START`/`AUTO_END` markers
+- Pipeline uses UAPI (uapis.cn) free tier via `uapi-sdk-typescript` SDK — zero config, no cookies/keys
+- `bun pipeline` runs scripts as child processes via `spawnSync`, expects project root as cwd
+- `import.meta.dir` is Bun-only; scripts won't run under Node
+- `jieba-wasm` is WASM — requires Bun's WASM support
+- `website/` is a separate Bun project with its own `package.json` and `bun.lock`
+- Astro `base` is `/heya.skill` (in `website/astro.config.mjs`) — must stay for GitHub Pages deploy
+- `.env` is gitignored (`**/.env`); no secrets needed in normal operation

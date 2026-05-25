@@ -2,41 +2,6 @@
 // 共用类型定义 — 被 fetch-bilibili-titles / analyze-titles / update-skill 复用
 // ============================================================
 
-// ---- B站 API 响应 ----
-
-export interface BilibiliNavResponse {
-  data: {
-    wbi_img: {
-      img_url: string;
-      sub_url: string;
-    };
-  };
-}
-
-export interface BilibiliSearchResponse {
-  code: number;
-  message: string;
-  data: {
-    page: { count: number };
-    list: { vlist: BilibiliVideoItem[] };
-  };
-}
-
-export interface BilibiliVideoItem {
-  bvid: string;
-  aid: number;
-  title: string;
-  created: number;
-}
-
-export interface BilibiliViewResponse {
-  code: number;
-  message: string;
-  data: {
-    cid: number;
-  };
-}
-
 // ---- 视频条目（采集结果） ----
 
 export interface VideoEntry {
@@ -45,13 +10,6 @@ export interface VideoEntry {
   title: string;
   created: number;
   createdDate: string;
-}
-
-// ---- WBI 签名 ----
-
-export interface WbiKeys {
-  img: string;
-  sub: string;
 }
 
 // ---- Pipeline 步骤 ----

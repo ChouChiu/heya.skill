@@ -1,8 +1,7 @@
 #!/usr/bin/env bun
 /**
  * fetch-bilibili-titles.ts
- * 从B站获取博主"黑鸦"的所有视频标题
- * 支持 WBI 签名
+ * 从 B站获取博主"黑鸦"的所有视频标题（通过 UAPI 第三方 API）
  *
  * 用法:
  *   bun run scripts/fetch-bilibili-titles.ts
@@ -10,7 +9,8 @@
 
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { fetchAllVideos } from "./lib/bilibili.ts";
+import type { VideoEntry } from "./lib/types.ts";
+import { fetchAllVideosFromUapi } from "./lib/uapi.ts";
 
 const OUTPUT_DIR = join(import.meta.dir, "../references/research");
 const TITLES_PATH = join(OUTPUT_DIR, "01-titles.json");
@@ -19,15 +19,16 @@ async function main(): Promise<void> {
   const args = process.argv.slice(2);
 
   if (args.includes("--help") || args.includes("-h")) {
-    console.log("从B站获取博主「黑鸦」的所有视频标题\n");
+    console.log("从B站获取博主「黑鸦」的所有视频标题（通过 UAPI）\n");
     console.log("用法:");
     console.log("  bun run scripts/fetch-bilibili-titles.ts");
+    console.log("\n使用 UAPI (uapis.cn) 免费额度，无需配置");
     process.exit(0);
   }
 
-  let results: Awaited<ReturnType<typeof fetchAllVideos>>;
+  let results: VideoEntry[];
   try {
-    results = await fetchAllVideos();
+    results = await fetchAllVideosFromUapi();
   } catch (err) {
     console.error(`\n❌ 获取失败: ${(err as Error).message}`);
 
