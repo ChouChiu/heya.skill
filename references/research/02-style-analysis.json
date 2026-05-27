@@ -2,26 +2,26 @@
   "meta": {
     "creator": "黑鸦",
     "uid": "3706929260006322",
-    "totalVideos": 86,
-    "analysisDate": "2026-05-26"
+    "totalVideos": 87,
+    "analysisDate": "2026-05-27"
   },
   "patterns": {
     "structure": {
       "悬念式": {
-        "frequency": 0.256,
-        "count": 22,
-        "pctDisplay": "25.6%",
+        "frequency": 0.264,
+        "count": 23,
+        "pctDisplay": "26.4%",
         "examples": [
+          "头皮发麻！豆包月活3亿只是伪装？字节700亿砸出AI奇点，算力已被挖空，同行的棺材板快要按不住了！| AI日报0527",
           "后背发凉！Kimi 突发大面积封号，真相居然是？风控大地震深夜引爆AI圈，全网第三方Coding Agent已被集体判处死刑！| AI日报0526",
           "马斯克秘密模型曝光！1.5T巨兽 V9基模彻底杀疯了！AI终局百模大战彻底打响！| AI日报0525",
           "OpenAI危！Anthropic 或携  Mythos 1、Opus 4.8、Sonnet 4.8 全线突围！战吗？战啊……！AI终极战争来了！|AI日报",
-          "后背发凉！Gemini 神秘功能泄露或在备战I/O？| AI日报0517",
-          "已泄露！Gemini 一大波神秘模型即将来袭，谷歌接管世界倒计时？建议把劈柴移交军事法庭！ | AI日报"
+          "后背发凉！Gemini 神秘功能泄露或在备战I/O？| AI日报0517"
         ],
         "templates": [
+          "头皮发麻！豆包月活3亿只是伪装？字节700亿砸出AI奇点，算力已被挖空，同行的棺材板快要按不住了！| AI日报0527",
           "后背发凉！Kimi 突发大面积封号，真相居然是？风控大地震深夜引爆AI圈，全网第三方Coding Agent已被集体判处死刑！| AI日报0526",
-          "马斯克秘密模型曝光！1.5T巨兽 V9基模彻底杀疯了！AI终局百模大战彻底打响！| AI日报0525",
-          "OpenAI危！Anthropic 或携  Mythos 1、Opus 4.8、Sonnet 4.8 全线突围！战吗？战啊……！AI终极战争来了！|AI日报"
+          "马斯克秘密模型曝光！1.5T巨兽 V9基模彻底杀疯了！AI终局百模大战彻底打响！| AI日报0525"
         ]
       },
       "数字列表式": {
@@ -45,9 +45,9 @@
         ]
       },
       "情感式": {
-        "frequency": 0.593,
+        "frequency": 0.586,
         "count": 51,
-        "pctDisplay": "59.3%",
+        "pctDisplay": "58.6%",
         "examples": [
           "硅谷全面雪崩！DeepSeek宣布永久降价！智谱新模型无预警发布，400 tokens/s海啸席卷全球！闭源阵营一夜蒸发！| AI日报0522",
           "AI 圈大地震！Gemini 永久提额 300%！Google Antigravity彻底杀疯了，吓得奥特曼当场瘫坐，行业已硝烟弥漫！|AI日报0521",
@@ -76,9 +76,9 @@
         "templates": []
       },
       "其他": {
-        "frequency": 0.128,
+        "frequency": 0.126,
         "count": 11,
-        "pctDisplay": "12.8%",
+        "pctDisplay": "12.6%",
         "examples": [
           "DeepSeek 网页前端现快速模式，代码暗藏专家模式 | AI日报0403",
           "阿里千问正式发布Qwen3.6-Plus；Gemma 4 即将发布 | AI日报0402",
@@ -180,7 +180,7 @@
     "aiTerms": [
       {
         "word": "AI",
-        "count": 85
+        "count": 87
       },
       {
         "word": "模型",
@@ -231,12 +231,12 @@
         "count": 4
       },
       {
-        "word": "多模态",
+        "word": "算力",
         "count": 3
       },
       {
-        "word": "算力",
-        "count": 2
+        "word": "多模态",
+        "count": 3
       },
       {
         "word": "ChatGPT",
@@ -258,11 +258,11 @@
     "highFrequency": [
       {
         "word": "AI",
-        "count": 84
+        "count": 86
       },
       {
         "word": "日报",
-        "count": 51
+        "count": 52
       },
       {
         "word": "模型",
@@ -365,15 +365,15 @@
         "count": 6
       },
       {
+        "word": "头皮发麻",
+        "count": 5
+      },
+      {
         "word": "全面",
         "count": 5
       },
       {
         "word": "海啸",
-        "count": 5
-      },
-      {
-        "word": "Google",
         "count": 5
       }
     ],
@@ -387,12 +387,12 @@
     ]
   },
   "sentencePatterns": {
-    "question": 0.012,
-    "exclamation": 0.244,
-    "statement": 0.744
+    "question": 0.011,
+    "exclamation": 0.241,
+    "statement": 0.747
   },
   "length": {
-    "avg": 51.6,
+    "avg": 51.7,
     "min": 25,
     "max": 79,
     "median": 51,
@@ -400,20 +400,20 @@
       "20字以内": 0,
       "21-30字": 3,
       "31-40字": 16,
-      "40字以上": 67
+      "40字以上": 68
     },
-    "over40Pct": 77.9,
+    "over40Pct": 78.2,
     "optimal": {
       "min": 31,
       "max": 60
     }
   },
   "numbers": {
-    "withNumberPct": 74.4,
+    "withNumberPct": 74.7,
     "commonNumbers": [
       {
         "number": 3,
-        "count": 25
+        "count": 26
       },
       {
         "number": 5,
@@ -454,12 +454,12 @@
     ]
   },
   "punctuation": {
-    "exclamationEnd": 0.244,
-    "questionEnd": 0.012,
-    "ellipsisEnd": 0.07
+    "exclamationEnd": 0.241,
+    "questionEnd": 0.011,
+    "ellipsisEnd": 0.069
   },
   "aiDaily": {
-    "count": 51,
-    "pct": 59.3
+    "count": 52,
+    "pct": 59.8
   }
 }
