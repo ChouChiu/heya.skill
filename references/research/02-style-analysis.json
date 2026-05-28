@@ -2,15 +2,15 @@
   "meta": {
     "creator": "黑鸦",
     "uid": "3706929260006322",
-    "totalVideos": 87,
-    "analysisDate": "2026-05-27"
+    "totalVideos": 92,
+    "analysisDate": "2026-05-28"
   },
   "patterns": {
     "structure": {
       "悬念式": {
-        "frequency": 0.264,
-        "count": 23,
-        "pctDisplay": "26.4%",
+        "frequency": 0.272,
+        "count": 25,
+        "pctDisplay": "27.2%",
         "examples": [
           "头皮发麻！豆包月活3亿只是伪装？字节700亿砸出AI奇点，算力已被挖空，同行的棺材板快要按不住了！| AI日报0527",
           "后背发凉！Kimi 突发大面积封号，真相居然是？风控大地震深夜引爆AI圈，全网第三方Coding Agent已被集体判处死刑！| AI日报0526",
@@ -32,9 +32,9 @@
         "templates": []
       },
       "对比式": {
-        "frequency": 0.023,
+        "frequency": 0.022,
         "count": 2,
-        "pctDisplay": "2.3%",
+        "pctDisplay": "2.2%",
         "examples": [
           "巅峰血战！GPT-5.6 vs Gemini 3.2，这一次，硅谷天崩地裂！| AI日报0514",
           "震撼登场！小米的 Xiaomi MiMo Token Plan 是神还是屎！"
@@ -45,20 +45,20 @@
         ]
       },
       "情感式": {
-        "frequency": 0.586,
-        "count": 51,
-        "pctDisplay": "58.6%",
+        "frequency": 0.565,
+        "count": 52,
+        "pctDisplay": "56.5%",
         "examples": [
+          "震撼官宣！DeepSeek 服务完成提速扩容，算力霸权神话破灭，闭源大模型的斩杀线来了！| AI日报0523",
           "硅谷全面雪崩！DeepSeek宣布永久降价！智谱新模型无预警发布，400 tokens/s海啸席卷全球！闭源阵营一夜蒸发！| AI日报0522",
           "AI 圈大地震！Gemini 永久提额 300%！Google Antigravity彻底杀疯了，吓得奥特曼当场瘫坐，行业已硝烟弥漫！|AI日报0521",
           "见证历史！Qwen3.7-Max深夜引爆硅谷杀疯了！35小时疯狂觉醒接管世界，Anthropic惊传全面雪崩，CEO吓出癫痫当场窒息！",
-          "哈基米时代来临！Gemini 3.5 悄然上线！Google 限额新规正式发布斩杀老用户！DeepSeek官方紧急回应字符bug！| AI日报0519",
-          "人类婚姻终结！DeepSeek官方泄密 V4.1 将提升角色扮演和情感陪伴能力！| AI日报0518"
+          "哈基米时代来临！Gemini 3.5 悄然上线！Google 限额新规正式发布斩杀老用户！DeepSeek官方紧急回应字符bug！| AI日报0519"
         ],
         "templates": [
+          "震撼官宣！DeepSeek 服务完成提速扩容，算力霸权神话破灭，闭源大模型的斩杀线来了！| AI日报0523",
           "硅谷全面雪崩！DeepSeek宣布永久降价！智谱新模型无预警发布，400 tokens/s海啸席卷全球！闭源阵营一夜蒸发！| AI日报0522",
-          "AI 圈大地震！Gemini 永久提额 300%！Google Antigravity彻底杀疯了，吓得奥特曼当场瘫坐，行业已硝烟弥漫！|AI日报0521",
-          "见证历史！Qwen3.7-Max深夜引爆硅谷杀疯了！35小时疯狂觉醒接管世界，Anthropic惊传全面雪崩，CEO吓出癫痫当场窒息！"
+          "AI 圈大地震！Gemini 永久提额 300%！Google Antigravity彻底杀疯了，吓得奥特曼当场瘫坐，行业已硝烟弥漫！|AI日报0521"
         ]
       },
       "故事式": {
@@ -76,20 +76,20 @@
         "templates": []
       },
       "其他": {
-        "frequency": 0.126,
-        "count": 11,
-        "pctDisplay": "12.6%",
+        "frequency": 0.141,
+        "count": 13,
+        "pctDisplay": "14.1%",
         "examples": [
-          "DeepSeek 网页前端现快速模式，代码暗藏专家模式 | AI日报0403",
-          "阿里千问正式发布Qwen3.6-Plus；Gemma 4 即将发布 | AI日报0402",
-          "Claude Code 源码意外泄露；小米新系统输入法漏洞泄露API密钥 | AI日报3月31日",
-          "DeepSeek 灰度测试多轮搜索功能；千问上线 Qwen3.5-Omini 系列模型 | AI日报3月30日",
-          "DeepSeek 更新网页端模型，SVG生成能力跃升 | AI日报"
-        ],
-        "templates": [
+          "【黑鸦Heya】一个视频带你看完Google I/O 2026",
+          "DeepSeek V4 发布，我眩晕瘫坐在椅子上，就像看到了核弹爆炸。",
           "DeepSeek 网页前端现快速模式，代码暗藏专家模式 | AI日报0403",
           "阿里千问正式发布Qwen3.6-Plus；Gemma 4 即将发布 | AI日报0402",
           "Claude Code 源码意外泄露；小米新系统输入法漏洞泄露API密钥 | AI日报3月31日"
+        ],
+        "templates": [
+          "【黑鸦Heya】一个视频带你看完Google I/O 2026",
+          "DeepSeek V4 发布，我眩晕瘫坐在椅子上，就像看到了核弹爆炸。",
+          "DeepSeek 网页前端现快速模式，代码暗藏专家模式 | AI日报0403"
         ]
       }
     }
@@ -98,11 +98,11 @@
     "emotion": [
       {
         "word": "大地震",
-        "count": 10
+        "count": 11
       },
       {
         "word": "引爆",
-        "count": 9
+        "count": 10
       },
       {
         "word": "杀疯了",
@@ -117,15 +117,19 @@
         "count": 5
       },
       {
+        "word": "瘫坐",
+        "count": 5
+      },
+      {
         "word": "重磅",
         "count": 5
       },
       {
-        "word": "雪崩",
+        "word": "震撼",
         "count": 4
       },
       {
-        "word": "瘫坐",
+        "word": "雪崩",
         "count": 4
       },
       {
@@ -141,16 +145,24 @@
         "count": 3
       },
       {
-        "word": "硝烟弥漫",
+        "word": "官宣",
         "count": 3
       },
       {
-        "word": "震撼",
+        "word": "斩杀线",
+        "count": 3
+      },
+      {
+        "word": "硝烟弥漫",
         "count": 3
       },
       {
         "word": "史诗级",
         "count": 3
+      },
+      {
+        "word": "神话破灭",
+        "count": 2
       },
       {
         "word": "永久",
@@ -163,36 +175,24 @@
       {
         "word": "窒息",
         "count": 2
-      },
-      {
-        "word": "官宣",
-        "count": 2
-      },
-      {
-        "word": "无预警",
-        "count": 1
-      },
-      {
-        "word": "紧急",
-        "count": 1
       }
     ],
     "aiTerms": [
       {
         "word": "AI",
-        "count": 87
-      },
-      {
-        "word": "模型",
-        "count": 29
+        "count": 90
       },
       {
         "word": "DeepSeek",
-        "count": 29
+        "count": 32
+      },
+      {
+        "word": "模型",
+        "count": 31
       },
       {
         "word": "发布",
-        "count": 15
+        "count": 16
       },
       {
         "word": "Gemini",
@@ -220,7 +220,11 @@
       },
       {
         "word": "Google",
-        "count": 5
+        "count": 6
+      },
+      {
+        "word": "算力",
+        "count": 4
       },
       {
         "word": "Anthropic",
@@ -231,12 +235,16 @@
         "count": 4
       },
       {
-        "word": "算力",
+        "word": "多模态",
         "count": 3
       },
       {
-        "word": "多模态",
-        "count": 3
+        "word": "闭源",
+        "count": 2
+      },
+      {
+        "word": "大模型",
+        "count": 2
       },
       {
         "word": "ChatGPT",
@@ -245,36 +253,28 @@
       {
         "word": "tokens",
         "count": 1
-      },
-      {
-        "word": "闭源",
-        "count": 1
-      },
-      {
-        "word": "大模型",
-        "count": 1
       }
     ],
     "highFrequency": [
       {
         "word": "AI",
-        "count": 86
+        "count": 89
       },
       {
         "word": "日报",
-        "count": 52
+        "count": 53
       },
       {
         "word": "模型",
-        "count": 30
+        "count": 33
       },
       {
         "word": "DeepSeek",
-        "count": 28
+        "count": 31
       },
       {
         "word": "发布",
-        "count": 15
+        "count": 16
       },
       {
         "word": "Gemini",
@@ -286,14 +286,22 @@
       },
       {
         "word": "地震",
-        "count": 10
+        "count": 11
       },
       {
         "word": "引爆",
+        "count": 10
+      },
+      {
+        "word": "V4",
         "count": 9
       },
       {
         "word": "硅谷",
+        "count": 8
+      },
+      {
+        "word": "圈大",
         "count": 8
       },
       {
@@ -309,19 +317,11 @@
         "count": 7
       },
       {
-        "word": "圈大",
-        "count": 7
-      },
-      {
         "word": "即将",
         "count": 7
       },
       {
         "word": "来袭",
-        "count": 7
-      },
-      {
-        "word": "V4",
         "count": 7
       },
       {
@@ -353,6 +353,10 @@
         "count": 6
       },
       {
+        "word": "Google",
+        "count": 6
+      },
+      {
         "word": "奥特曼",
         "count": 6
       },
@@ -369,11 +373,7 @@
         "count": 5
       },
       {
-        "word": "全面",
-        "count": 5
-      },
-      {
-        "word": "海啸",
+        "word": "斩杀",
         "count": 5
       }
     ],
@@ -383,45 +383,46 @@
       "杀疯了",
       "全面",
       "海啸",
+      "瘫坐",
       "重磅"
     ]
   },
   "sentencePatterns": {
     "question": 0.011,
-    "exclamation": 0.241,
-    "statement": 0.747
+    "exclamation": 0.239,
+    "statement": 0.75
   },
   "length": {
-    "avg": 51.7,
+    "avg": 51.2,
     "min": 25,
     "max": 79,
     "median": 51,
     "distribution": {
       "20字以内": 0,
       "21-30字": 3,
-      "31-40字": 16,
-      "40字以上": 68
+      "31-40字": 18,
+      "40字以上": 71
     },
-    "over40Pct": 78.2,
+    "over40Pct": 77.2,
     "optimal": {
       "min": 31,
       "max": 60
     }
   },
   "numbers": {
-    "withNumberPct": 74.7,
+    "withNumberPct": 75,
     "commonNumbers": [
       {
         "number": 3,
         "count": 26
       },
       {
-        "number": 5,
-        "count": 21
+        "number": 4,
+        "count": 23
       },
       {
-        "number": 4,
-        "count": 20
+        "number": 5,
+        "count": 21
       },
       {
         "number": 2,
@@ -454,12 +455,12 @@
     ]
   },
   "punctuation": {
-    "exclamationEnd": 0.241,
+    "exclamationEnd": 0.239,
     "questionEnd": 0.011,
-    "ellipsisEnd": 0.069
+    "ellipsisEnd": 0.076
   },
   "aiDaily": {
-    "count": 52,
-    "pct": 59.8
+    "count": 53,
+    "pct": 57.6
   }
 }
