@@ -2,26 +2,26 @@
   "meta": {
     "creator": "黑鸦",
     "uid": "3706929260006322",
-    "totalVideos": 92,
+    "totalVideos": 93,
     "analysisDate": "2026-05-28"
   },
   "patterns": {
     "structure": {
       "悬念式": {
-        "frequency": 0.272,
-        "count": 25,
-        "pctDisplay": "27.2%",
+        "frequency": 0.28,
+        "count": 26,
+        "pctDisplay": "28.0%",
         "examples": [
+          "180天断供倒计时！Anthropic命悬一线？遥控器竟在马斯克手里，真相令人后背发凉！| AI日报0528",
           "头皮发麻！豆包月活3亿只是伪装？字节700亿砸出AI奇点，算力已被挖空，同行的棺材板快要按不住了！| AI日报0527",
           "后背发凉！Kimi 突发大面积封号，真相居然是？风控大地震深夜引爆AI圈，全网第三方Coding Agent已被集体判处死刑！| AI日报0526",
           "马斯克秘密模型曝光！1.5T巨兽 V9基模彻底杀疯了！AI终局百模大战彻底打响！| AI日报0525",
-          "OpenAI危！Anthropic 或携  Mythos 1、Opus 4.8、Sonnet 4.8 全线突围！战吗？战啊……！AI终极战争来了！|AI日报",
-          "后背发凉！Gemini 神秘功能泄露或在备战I/O？| AI日报0517"
+          "OpenAI危！Anthropic 或携  Mythos 1、Opus 4.8、Sonnet 4.8 全线突围！战吗？战啊……！AI终极战争来了！|AI日报"
         ],
         "templates": [
+          "180天断供倒计时！Anthropic命悬一线？遥控器竟在马斯克手里，真相令人后背发凉！| AI日报0528",
           "头皮发麻！豆包月活3亿只是伪装？字节700亿砸出AI奇点，算力已被挖空，同行的棺材板快要按不住了！| AI日报0527",
-          "后背发凉！Kimi 突发大面积封号，真相居然是？风控大地震深夜引爆AI圈，全网第三方Coding Agent已被集体判处死刑！| AI日报0526",
-          "马斯克秘密模型曝光！1.5T巨兽 V9基模彻底杀疯了！AI终局百模大战彻底打响！| AI日报0525"
+          "后背发凉！Kimi 突发大面积封号，真相居然是？风控大地震深夜引爆AI圈，全网第三方Coding Agent已被集体判处死刑！| AI日报0526"
         ]
       },
       "数字列表式": {
@@ -45,9 +45,9 @@
         ]
       },
       "情感式": {
-        "frequency": 0.565,
+        "frequency": 0.559,
         "count": 52,
-        "pctDisplay": "56.5%",
+        "pctDisplay": "55.9%",
         "examples": [
           "震撼官宣！DeepSeek 服务完成提速扩容，算力霸权神话破灭，闭源大模型的斩杀线来了！| AI日报0523",
           "硅谷全面雪崩！DeepSeek宣布永久降价！智谱新模型无预警发布，400 tokens/s海啸席卷全球！闭源阵营一夜蒸发！| AI日报0522",
@@ -76,9 +76,9 @@
         "templates": []
       },
       "其他": {
-        "frequency": 0.141,
+        "frequency": 0.14,
         "count": 13,
-        "pctDisplay": "14.1%",
+        "pctDisplay": "14.0%",
         "examples": [
           "【黑鸦Heya】一个视频带你看完Google I/O 2026",
           "DeepSeek V4 发布，我眩晕瘫坐在椅子上，就像看到了核弹爆炸。",
@@ -125,6 +125,10 @@
         "count": 5
       },
       {
+        "word": "后背发凉",
+        "count": 4
+      },
+      {
         "word": "震撼",
         "count": 4
       },
@@ -139,10 +143,6 @@
       {
         "word": "疯狂",
         "count": 4
-      },
-      {
-        "word": "后背发凉",
-        "count": 3
       },
       {
         "word": "官宣",
@@ -180,7 +180,7 @@
     "aiTerms": [
       {
         "word": "AI",
-        "count": 90
+        "count": 91
       },
       {
         "word": "DeepSeek",
@@ -223,11 +223,11 @@
         "count": 6
       },
       {
-        "word": "算力",
-        "count": 4
+        "word": "Anthropic",
+        "count": 5
       },
       {
-        "word": "Anthropic",
+        "word": "算力",
         "count": 4
       },
       {
@@ -258,11 +258,11 @@
     "highFrequency": [
       {
         "word": "AI",
-        "count": 89
+        "count": 90
       },
       {
         "word": "日报",
-        "count": 53
+        "count": 54
       },
       {
         "word": "模型",
@@ -369,11 +369,11 @@
         "count": 6
       },
       {
-        "word": "头皮发麻",
+        "word": "Anthropic",
         "count": 5
       },
       {
-        "word": "斩杀",
+        "word": "马斯克",
         "count": 5
       }
     ],
@@ -389,8 +389,8 @@
   },
   "sentencePatterns": {
     "question": 0.011,
-    "exclamation": 0.239,
-    "statement": 0.75
+    "exclamation": 0.237,
+    "statement": 0.753
   },
   "length": {
     "avg": 51.2,
@@ -401,16 +401,16 @@
       "20字以内": 0,
       "21-30字": 3,
       "31-40字": 18,
-      "40字以上": 71
+      "40字以上": 72
     },
-    "over40Pct": 77.2,
+    "over40Pct": 77.4,
     "optimal": {
       "min": 31,
       "max": 60
     }
   },
   "numbers": {
-    "withNumberPct": 75,
+    "withNumberPct": 75.3,
     "commonNumbers": [
       {
         "number": 3,
@@ -455,12 +455,12 @@
     ]
   },
   "punctuation": {
-    "exclamationEnd": 0.239,
+    "exclamationEnd": 0.237,
     "questionEnd": 0.011,
-    "ellipsisEnd": 0.076
+    "ellipsisEnd": 0.075
   },
   "aiDaily": {
-    "count": 53,
-    "pct": 57.6
+    "count": 54,
+    "pct": 58.1
   }
 }
