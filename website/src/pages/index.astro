@@ -19,6 +19,7 @@ const year = new Date().getFullYear();
 				<a href="#features" class="text-sm font-medium text-foreground-muted hover:text-foreground transition-all duration-300">核心功能</a>
 				<a href="#install" class="text-sm font-medium text-foreground-muted hover:text-foreground transition-all duration-300">一键集成</a>
 				<a href="#example" class="text-sm font-medium text-foreground-muted hover:text-foreground transition-all duration-300">效果对比</a>
+				<a href="#faq" class="text-sm font-medium text-foreground-muted hover:text-foreground transition-all duration-300">常见问题</a>
 			</div>
 			<div class="flex items-center gap-3">
 				<a
@@ -238,6 +239,112 @@ const year = new Date().getFullYear();
 				</div>
 			</div>
 		</section>
+
+		<!-- FAQ -->
+		<section id="faq" class="min-h-screen flex flex-col items-center justify-center max-w-[1000px] mx-auto px-4 py-6 w-full md:px-6 md:py-10">
+			<div class="text-center mb-9">
+				<h2 class="text-[clamp(26px,4vw,40px)] font-extrabold tracking-[-0.02em] mb-2.5">常见问题</h2>
+				<p class="text-[clamp(13px,1.5vw,17px)] text-foreground-muted">解答您在接入与使用过程中的常见疑问</p>
+			</div>
+			
+			<div class="w-full flex flex-col bg-surface border border-border rounded-[20px] overflow-hidden">
+			<div class="faq-item group border-b border-border last:border-b-0 transition-colors duration-300">
+				<button class="faq-btn flex w-full justify-between items-center cursor-pointer p-6 font-semibold text-[16px] outline-none select-none text-left bg-transparent border-none text-foreground hover:bg-surface-hover hover:text-accent transition-colors duration-300 group-[.open]:bg-surface-hover">
+					<span>支持哪些 AI 客户端？</span>
+					<span class="text-foreground-muted transition-transform duration-300 group-[.open]:rotate-180">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+					</span>
+				</button>
+				<div class="grid transition-all duration-300 ease-in-out grid-rows-[0fr] opacity-0 group-[.open]:grid-rows-[1fr] group-[.open]:opacity-100 bg-surface-hover">
+					<div class="overflow-hidden">
+						<div class="px-6 pb-6 pt-2 text-[14px] text-foreground-muted leading-[1.6]">
+							基于开放的 <a href="https://agentskills.io" class="underline hover:text-accent">Agent Skills</a> 协议，已兼容 Claude Code、Codex、Cursor、Windsurf 等 50+ 主流 AI 编辑器与运行环境，开箱即用。
+						</div>
+					</div>
+				</div>
+			</div>
+				
+			<div class="faq-item group border-b border-border last:border-b-0 transition-colors duration-300">
+				<button class="faq-btn flex w-full justify-between items-center cursor-pointer p-6 font-semibold text-[16px] outline-none select-none text-left bg-transparent border-none text-foreground hover:bg-surface-hover hover:text-accent transition-colors duration-300 group-[.open]:bg-surface-hover">
+					<span>生成的标题可以直接发布吗？</span>
+					<span class="text-foreground-muted transition-transform duration-300 group-[.open]:rotate-180">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+					</span>
+				</button>
+				<div class="grid transition-all duration-300 ease-in-out grid-rows-[0fr] opacity-0 group-[.open]:grid-rows-[1fr] group-[.open]:opacity-100 bg-surface-hover">
+					<div class="overflow-hidden">
+						<div class="px-6 pb-6 pt-2 text-[14px] text-foreground-muted leading-[1.6]">
+							可以。AI 只学习爆款的结构框架与情绪节奏，不会照搬原文。生成的标题可直接用于 B 站、小红书、微信公众号等平台发布。
+						</div>
+					</div>
+				</div>
+			</div>
+				
+			<div class="faq-item group border-b border-border last:border-b-0 transition-colors duration-300">
+				<button class="faq-btn flex w-full justify-between items-center cursor-pointer p-6 font-semibold text-[16px] outline-none select-none text-left bg-transparent border-none text-foreground hover:bg-surface-hover hover:text-accent transition-colors duration-300 group-[.open]:bg-surface-hover">
+					<span>为什么推荐一行命令安装？</span>
+					<span class="text-foreground-muted transition-transform duration-300 group-[.open]:rotate-180">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+					</span>
+				</button>
+				<div class="grid transition-all duration-300 ease-in-out grid-rows-[0fr] opacity-0 group-[.open]:grid-rows-[1fr] group-[.open]:opacity-100 bg-surface-hover">
+					<div class="overflow-hidden">
+						<div class="px-6 pb-6 pt-2 text-[14px] text-foreground-muted leading-[1.6]">
+							一行命令自动识别本地环境、完成注册，后续升级也只需一条指令。手动安装虽然可行，但部分客户端的配置路径有差异，容易出错。
+						</div>
+					</div>
+				</div>
+			</div>
+				
+			<div class="faq-item group border-b border-border last:border-b-0 transition-colors duration-300">
+				<button class="faq-btn flex w-full justify-between items-center cursor-pointer p-6 font-semibold text-[16px] outline-none select-none text-left bg-transparent border-none text-foreground hover:bg-surface-hover hover:text-accent transition-colors duration-300 group-[.open]:bg-surface-hover">
+					<span>会额外收费吗？</span>
+					<span class="text-foreground-muted transition-transform duration-300 group-[.open]:rotate-180">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+					</span>
+				</button>
+				<div class="grid transition-all duration-300 ease-in-out grid-rows-[0fr] opacity-0 group-[.open]:grid-rows-[1fr] group-[.open]:opacity-100 bg-surface-hover">
+					<div class="overflow-hidden">
+						<div class="px-6 pb-6 pt-2 text-[14px] text-foreground-muted leading-[1.6]">
+							不会。引擎永久开源免费，唯一消耗的是你所用大模型（如 Claude、OpenAI）的 Token 额度，无任何附加费用。
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="faq-item group border-b border-border last:border-b-0 transition-colors duration-300">
+				<button class="faq-btn flex w-full justify-between items-center cursor-pointer p-6 font-semibold text-[16px] outline-none select-none text-left bg-transparent border-none text-foreground hover:bg-surface-hover hover:text-accent transition-colors duration-300 group-[.open]:bg-surface-hover">
+					<span>如何更新到最新版本？</span>
+					<span class="text-foreground-muted transition-transform duration-300 group-[.open]:rotate-180">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+					</span>
+				</button>
+				<div class="grid transition-all duration-300 ease-in-out grid-rows-[0fr] opacity-0 group-[.open]:grid-rows-[1fr] group-[.open]:opacity-100 bg-surface-hover">
+					<div class="overflow-hidden">
+						<div class="px-6 pb-6 pt-2 text-[14px] text-foreground-muted leading-[1.6]">
+							使用 CLI 安装的用户只需再次运行 <code class="bg-surface px-1.5 py-0.5 rounded text-[13px]">npx skills add ChouChiu/heya.skill</code> 即可自动更新。手动安装的用户需要重新拉取最新代码。
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="faq-item group border-b border-border last:border-b-0 transition-colors duration-300">
+				<button class="faq-btn flex w-full justify-between items-center cursor-pointer p-6 font-semibold text-[16px] outline-none select-none text-left bg-transparent border-none text-foreground hover:bg-surface-hover hover:text-accent transition-colors duration-300 group-[.open]:bg-surface-hover">
+					<span>生成效果不满意怎么办？</span>
+					<span class="text-foreground-muted transition-transform duration-300 group-[.open]:rotate-180">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+					</span>
+				</button>
+				<div class="grid transition-all duration-300 ease-in-out grid-rows-[0fr] opacity-0 group-[.open]:grid-rows-[1fr] group-[.open]:opacity-100 bg-surface-hover">
+					<div class="overflow-hidden">
+						<div class="px-6 pb-6 pt-2 text-[14px] text-foreground-muted leading-[1.6]">
+							可以尝试以下方法：1. 在提示词中指定想要的风格类型（情感式/悬念式/日报式/对比式）；2. 提供更多背景信息或关键词；3. 让 AI 生成多轮后挑选最佳。
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+		</section>
 		</div>
 	</main>
 
@@ -310,6 +417,24 @@ const year = new Date().getFullYear();
 					}, 2000);
 				} catch (e) {
 					console.error("Clipboard copy failed", e);
+				}
+			}
+		});
+	});
+
+	// FAQ Accordion logic
+	const faqBtns = document.querySelectorAll(".faq-btn");
+	faqBtns.forEach((btn) => {
+		btn.addEventListener("click", () => {
+			const parent = btn.closest(".faq-item");
+			if (parent) {
+				const isOpen = parent.classList.contains("open");
+				// Optional: Close all other items for accordion style
+				document.querySelectorAll(".faq-item").forEach(item => item.classList.remove("open"));
+				
+				// Toggle current item
+				if (!isOpen) {
+					parent.classList.add("open");
 				}
 			}
 		});
