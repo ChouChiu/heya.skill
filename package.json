@@ -8,16 +8,14 @@
     "website:build": "astro build",
     "website:preview": "astro preview",
     "lint": "biome check scripts/",
-    "lint:md": "bunx markdownlint-cli2 --fix \"**/*.md\"",
     "format": "biome check --write scripts/ website/src/",
-    "format:all": "biome check --write scripts/ website/src/ && bunx markdownlint-cli2 --fix \"**/*.md\"",
+    "format:all": "biome check --write scripts/ website/src/",
     "check": "biome check scripts/ website/src/"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.16",
     "@types/bun": "^1.3.14",
     "@types/sentiment": "^5.0.4",
-    "markdownlint-cli2": "^0.22.1",
     "typescript": "^6.0.3"
   },
   "dependencies": {

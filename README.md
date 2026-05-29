@@ -4,9 +4,6 @@
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-Standard-green)](https://agentskills.io)
 [![skills.sh](https://img.shields.io/badge/skills.sh-Compatible-blue)](https://www.skills.sh/chouchiu/heya.skill)
 [![下载量](https://img.shields.io/badge/dynamic/json?url=https://skills.sh/api/badge/chouchiu/heya.skill&query=message&label=Downloads&labelColor=gray&color=orange)](https://skills.sh/chouchiu/heya.skill)
-[![Multi-Runtime](https://img.shields.io/badge/Runtime-50%2B%20兼容-blueviolet)](#安装)
-[![Update Reference](https://github.com/ChouChiu/heya.skill/actions/workflows/update-reference.yml/badge.svg)](https://github.com/ChouChiu/heya.skill/actions/workflows/update-reference.yml)
-> 震撼官宣！DeepSeek 服务完成提速扩容，算力霸权神话破灭，闭源大模型的斩杀线来了！| AI日报0523
 
 基于 B 站博主 **[黑鸦](https://space.bilibili.com/3706929260006322)**（Heya）视频标题的深度分析，让 AI 学会黑鸦的标志性风格：**长标题、情绪炸弹、多事件合并**。
 
@@ -19,45 +16,59 @@
 - **50+ Runtime**：基于 [Agent Skills](https://agentskills.io) 标准协议，兼容 Claude Code、Codex、Cursor、OpenClaw 等
 - **零配置**：一行命令 `npx skills add ChouChiu/heya.skill` 即可接入
 
+## 快速开始
+
+1. 安装 Skill：
+
+   ```bash
+   npx skills add ChouChiu/heya.skill
+   ```
+
+2. 使用 Skill：
+   告诉你的 AI agent：
+
+   ```
+   帮我把这段新闻写成黑鸦风格的标题
+   ```
+
+3. 获取结果：
+   AI 会生成 3-5 个候选标题，覆盖情感式、悬念式、日报式、对比式四种结构。
+
 ## 目录
 
 - [黑鸦 · 标题风格生成器](#黑鸦--标题风格生成器)
   - [特性](#特性)
+  - [快速开始](#快速开始)
   - [目录](#目录)
   - [安装](#安装)
-    - [方式一：一行命令（推荐）](#方式一一行命令推荐)
-    - [方式二：手动安装](#方式二手动安装)
-    - [方式三：直接粘贴](#方式三直接粘贴)
   - [使用](#使用)
   - [效果示例](#效果示例)
+  - [常见问题](#常见问题)
   - [工作原理](#工作原理)
   - [本地开发](#本地开发)
   - [项目结构](#项目结构)
   - [相关链接](#相关链接)
+  - [贡献指南](#贡献指南)
   - [许可证](#许可证)
 
 ## 安装
 
-### 方式一：一行命令（推荐）
-
-打开你正在用的 AI agent，告诉它：
-
-```
-帮我安装这个 skill：https://github.com/ChouChiu/heya.skill
-```
-
-或者用通用 CLI 安装器（[vercel-labs/skills](https://github.com/vercel-labs/skills)，支持 55+ runtime）：
+### 推荐方式：一行命令
 
 ```bash
 npx skills add ChouChiu/heya.skill
 ```
 
-安装器会自动识别你当前的 runtime。需要手动指定时加 `-a claude-code` / `-a codex` / `-a cursor` / `-a openclaw`。
+或者告诉你的 AI agent：
 
-### 方式二：手动安装
+```
+帮我安装这个 skill：https://github.com/ChouChiu/heya.skill
+```
 
 <details>
-<summary>展开查看各 runtime 的 skills 目录</summary>
+<summary>其他安装方式</summary>
+
+手动安装：
 
 | Runtime      | 安装路径                                   |
 | ------------ | ------------------------------------------ |
@@ -71,11 +82,11 @@ npx skills add ChouChiu/heya.skill
 git clone https://github.com/ChouChiu/heya.skill <上面对应的路径>
 ```
 
-</details>
-
-### 方式三：直接粘贴
+直接粘贴：
 
 即使 runtime 不支持自动加载，你也可以直接把 [`SKILL.md`](SKILL.md) 的内容粘贴进对话——它本质就是一份 markdown + YAML frontmatter。
+
+</details>
 
 ## 使用
 
@@ -163,23 +174,23 @@ OpenAI 正在 ChatGPT 网页端测试名为 "Intelligence" 的简化版模型选
 ```
 基于文稿内容，生成5个黑鸦风格候选标题：
 
-**1.** 震撼官宣！DeepSeek-V4-Pro永久定价引爆全网！智谱400tokens/s海啸席卷！阿里Qwen3.7-Max免费送！闭源阵营一夜蒸发！| AI日报0523
+1. 震撼官宣！DeepSeek-V4-Pro永久定价引爆全网！智谱400tokens/s海啸席卷！阿里Qwen3.7-Max免费送！闭源阵营一夜蒸发！| AI日报0523
 > 结构：情感式
 > 说明：多事件合并（DeepSeek+智谱+阿里），使用"震撼官宣"、"引爆"、"海啸"等情绪词，符合黑鸦最常用的情感式风格
 
-**2.** AI圈大地震！DeepSeek永久降价杀疯了！华为昇腾首个1.58-bit三值大模型横空出世！Claude Code全面开放！| AI日报0523
+2. AI圈大地震！DeepSeek永久降价杀疯了！华为昇腾首个1.58-bit三值大模型横空出世！Claude Code全面开放！| AI日报0523
 > 结构：情感式
 > 说明：使用"大地震"、"杀疯了"等强烈情绪词，合并DeepSeek降价+华为昇腾+Claude Code三个重磅事件
 
-**3.** 见证历史！DeepSeek-V4-Pro永久定价震撼官宣！智谱新模型400tokens/s杀疯了！阿里Qwen3.7-Max免费体验引爆全网！| AI日报0523
+3. 见证历史！DeepSeek-V4-Pro永久定价震撼官宣！智谱新模型400tokens/s杀疯了！阿里Qwen3.7-Max免费体验引爆全网！| AI日报0523
 > 结构：情感式
 > 说明：使用"见证历史"、"震撼官宣"、"杀疯了"、"引爆"等多重情绪词，强化冲击力
 
-**4.** 后背发凉！Anthropic宣称Claude发现超一万个高危漏洞！特朗普最后一刻取消AI安全令！OpenAI紧急简化模型选择！| AI日报0523
+4. 后背发凉！Anthropic宣称Claude发现超一万个高危漏洞！特朗普最后一刻取消AI安全令！OpenAI紧急简化模型选择！| AI日报0523
 > 结构：悬念式
 > 说明：使用"后背发凉"制造悬念，合并Anthropic漏洞+特朗普取消令+OpenAI简化选择器三个事件
 
-**5.** AI圈全面雪崩！DeepSeek永久定价引爆！智谱400tokens/s海啸！阿里Qwen3.7-Max五折杀疯了！闭源阵营一夜蒸发！| AI日报0523
+5. AI圈全面雪崩！DeepSeek永久定价引爆！智谱400tokens/s海啸！阿里Qwen3.7-Max五折杀疯了！闭源阵营一夜蒸发！| AI日报0523
 > 结构：情感式
 > 说明：使用"全面雪崩"、"引爆"、"海啸"、"杀疯了"等多重情绪词，强调多事件冲击力
 
@@ -187,6 +198,32 @@ OpenAI 正在 ChatGPT 网页端测试名为 "Intelligence" 的简化版模型选
 
 **推荐使用第1或第5个**，长度适中（约55字），情绪饱满，多事件合并，最符合黑鸦风格DNA。
 ```
+
+## 常见问题
+
+### Q: 支持哪些 AI agent？
+
+A: 支持所有兼容 [Agent Skills](https://agentskills.io) 协议的 runtime，包括 Claude Code、Codex、Cursor、OpenClaw、Gemini CLI、OpenCode 等 50+ 种。
+
+### Q: 安装后如何使用？
+
+A: 直接告诉你的 AI agent "用黑鸦风格给这段内容起标题"，它会自动加载 Skill 并生成 3-5 个候选标题。
+
+### Q: 标题效果不好怎么办？
+
+A: 可以尝试：
+
+1. 提供更详细的内容素材
+2. 指定想要的情感强度（强烈/中等/轻微）
+3. 要求特定结构（情感式/悬念式/日报式/对比式）
+
+### Q: 如何更新数据分析？
+
+A: 运行 `bun pipeline` 命令，它会自动采集最新视频标题并更新分析数据。
+
+### Q: 可以用于非 AI 领域的内容吗？
+
+A: 可以！黑鸦风格适用于任何需要吸引眼球的内容，包括科技、游戏、娱乐、体育等领域。
 
 ## 工作原理
 
@@ -211,7 +248,7 @@ bun pipeline --skip-fetch # 跳过采集，仅分析 + 生成
 
 ## 本地开发
 
-> **前置要求：** [Bun](https://bun.sh) ≥ 1.0
+> 前置要求：[Bun](https://bun.sh) ≥ 1.0
 
 ```bash
 # 克隆项目
@@ -268,22 +305,37 @@ Cookie 有效期约 30 天。配置 `BILIBILI_REFRESH_TOKEN` 后，脚本会在 
 
 ## 项目结构
 
-| 路径                      | 说明                                          |
-| ------------------------- | --------------------------------------------- |
-| `SKILL.md`                | 生成产物：Agent Skills 入口（AI 读取）        |
-| `SKILL.example.md`        | ✏️ 模板源文件（手动编辑这个）                  |
-| `scripts/pipeline.ts`     | 全流程编排：采集 → 分析 → 生成                |
-| `scripts/lib/bilibili.ts` | Bilibili 官方 API 客户端（Wbi 签名 + Cookie） |
-| `scripts/lib/`            | 共享模块（分析引擎、分词、生成器）            |
-| `references/research/`    | 分析数据（JSON + MD 双格式）                  |
-| `website/`                | Astro 落地页（独立项目）                      |
-| `.github/workflows/`      | CI：每日自动更新 + 网站部署                   |
+```
+heya.skill/
+├── SKILL.md                 # 生成产物：Agent Skills 入口（AI 读取）
+├── SKILL.example.md         # ✏️ 模板源文件（手动编辑这个）
+├── scripts/
+│   ├── pipeline.ts          # 全流程编排：采集 → 分析 → 生成
+│   ├── fetch-bilibili-titles.ts  # 采集脚本
+│   ├── analyze-titles.ts    # 分析脚本
+│   ├── update-skill.ts      # 生成脚本
+│   └── lib/                 # 共享模块（分析引擎、分词、生成器）
+│       ├── bilibili.ts      # Bilibili 官方 API 客户端
+│       ├── analysis/        # 分析引擎
+│       └── generate/        # 生成器
+├── references/
+│   └── research/            # 分析数据（JSON + MD 双格式）
+├── website/                 # Astro 落地页（独立项目）
+└── .github/
+    └── workflows/           # CI：每日自动更新 + 网站部署
+```
 
 ## 相关链接
 
 - [Agent Skills 协议](https://agentskills.io) — 开放的 AI Skill 标准
 - [skills.sh](https://skills.sh/chouchiu/heya.skill) — Skill 市场页面
 - [黑鸦 B 站主页](https://space.bilibili.com/3706929260006322) — 原始风格来源
+
+## 贡献指南
+
+欢迎贡献！请阅读我们的 [贡献指南](CONTRIBUTING.md) 了解详细的贡献流程。
+
+本项目采用 [贡献者公约](CODE_OF_CONDUCT.md)，参与即表示同意遵守该准则。
 
 ## 许可证
 
